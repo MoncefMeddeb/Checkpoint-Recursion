@@ -1,0 +1,18 @@
+FUNCTION Palindrome(VAR word:STRING[], debut,fin:INTEGER) BOOLEAN
+var
+    n:INTEGER;
+BEGIN
+    n:=word.length
+    if n<2 then:
+        return TRUE
+    END_IF
+    debut:=word[0]
+    fin:=word[n-1]
+    while debut<fin DO
+        IF word[debut]!= word[fin] then
+            return FALSE
+        ELSE
+            return Palindrome(word,debut+1;fin-1)
+        END_IF
+    END_WHILE
+END
